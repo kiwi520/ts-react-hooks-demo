@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MultiCheckbox from "./components/multiCheckbox/multiCheckbox";
+import {IBoxItem} from "./components/context/state";
+
+const options: IBoxItem[] = [
+  {label: 'aaa', value: '111',},
+  {label: 'bbb', value: '222',},
+  {label: 'ccc', value: '333',},
+  {label: 'ddd', value: '444',},
+  {label: 'eee', value: '555',},
+  {label: 'fff', value: '666',},
+  {label: 'ggg', value: '777',},
+  {label: 'hhh', value: '888',},
+  {label: 'iii', value: '999',},
+]
 
 function App() {
+  const onChangeHandle = (e:React.ChangeEvent<HTMLInputElement>) =>{}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MultiCheckbox onChangeHandle={onChangeHandle} boxList={options} className={'test'} />
     </div>
   );
 }
